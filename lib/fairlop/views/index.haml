@@ -1,0 +1,32 @@
+%header
+  %ul#links
+    %li#about About
+    %li#events Events
+    %li#contact Contact
+    %li#downloads Downloads
+    %li#social 
+      %div{style:'display:block;float:left;width:150px;min-height:25px;'}
+        #like{style:"display:none;float:left;width:150px;height:25px;overflow:hidden;"}
+          <fb:like href="http://fairloppaddlesport.co.uk" send="false" layout="button_count" width="450" show_faces="false"></fb:like>
+
+
+#pages
+
+  .page.about
+    %h1 About
+
+  .page.events
+    %h1 Events
+    -@events.each do |event|
+      %p
+        =link_to event.name, "http://facebook.com/#{event.id}", target:'blank'
+
+  .page.downloads
+    %h1 Downloads
+
+  .page.contact
+    %h1 Contact
+    %p Please leave a message for us to get back to you, or visit our #{link_to "facebook group", "http://facebook.com/5169819018", target:'blank'}!
+    %form
+      %textarea
+      %button Send
